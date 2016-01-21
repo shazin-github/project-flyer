@@ -54,7 +54,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('flyer/{zip}/{street}' , 'flyerController@show');
 
-    Route::get('/home' ,'flyerController@index');
+    Route::get('/' ,'HomeController@index');
 
 	Route::get('flyer/create' , 'flyerController@create');
 
