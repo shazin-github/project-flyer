@@ -35,7 +35,7 @@ class flyerController extends Controller
         
         $this->middleware('auth', ['except' => ['show','store','AddPhoto']]);
 
-         parent::__construct();
+        parent::__construct();
 
        
     }
@@ -54,7 +54,7 @@ class flyerController extends Controller
     public function create(){
 
         
-
+        
     	//flash('Success','Your Flyer has been Created','info');
 
         //flash()->success('Success',' Flyer Has been added');

@@ -12,8 +12,9 @@
         <a href="flyer/create" class='btn btn-primary'>Create New Flyer</a>
       
       @else
-      
-        <a href="login" class='btn btn-primary'>Login</a>
+      	
+      	<a href="login" class='btn btn-primary'>SignIn</a>
+        <a href="register" class='btn btn-primary'>SignUp</a>
       
       @endif
 

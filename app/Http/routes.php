@@ -45,26 +45,19 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::resource('flyer' , 'flyerController');
-	 //Route::get('/' , 'flyerController@index');
 
-	 Route::post('flyer/{zip}/{street}/photos' , 'flyerController@AddPhoto');
+	Route::post('flyer/{zip}/{street}/photos' , 'flyerController@AddPhoto');
 
-
-
-	 Route::post('flyer/store' , 'flyerController@store');
+	Route::post('flyer/store' , 'flyerController@store');
 
     Route::post('/logout' , 'AuthController@getLogout');
 
     Route::get('flyer/{zip}/{street}' , 'flyerController@show');
 
-    Route::get('/' , function(){
-		
-		return view('flyer.home');
+    Route::get('/home' ,'flyerController@index');
 
-	});
+	Route::get('flyer/create' , 'flyerController@create');
 
-	 Route::get('flyer/create' , 'flyerController@create');
-
-	 Route::get('test' , 'HomeController@index');
+	Route::get('test' , 'HomeController@index');
    
 });
