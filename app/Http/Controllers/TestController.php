@@ -32,11 +32,13 @@ class TestController extends Controller
     	return $repository->get();
     }
 
+
+    // service Container
     public function index(){
 
     	$RB = \App::make('RoketLuncher');
 
-    	//dd($RB->blastoff());
+    	//return $RB->blastoff();
 
     	$name = 'shazin-github';
 
@@ -46,7 +48,7 @@ class TestController extends Controller
 
     	$res = $dat->send();
 
-    	dd($res->json());
+    	return $res->json();
 
     }
 }

@@ -48,7 +48,7 @@ class flyerController extends Controller
 
     public function index(){
 
-        return view('flyer.home');
+        
     }
 
     public function create(){

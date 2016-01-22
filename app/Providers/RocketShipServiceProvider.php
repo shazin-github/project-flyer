@@ -37,18 +37,7 @@ class RocketShipServiceProvider extends ServiceProvider
 
          });
 
-         $this->app->singleton('guzzle', function($app){
-            $client = new \Guzzle\Service\Client();
-            
-            return $client;
-        
-          });
-
-         $this->app->bind('GuzzleProvider', function(){
-
-             return (new \Guzzle\Service\Client());
-
-          });
+         
      }
 
 }

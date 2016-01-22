@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\RocketShipServiceProvider::class,
+        App\Providers\GuzzleServiceProvider::class,
 
     ],
 

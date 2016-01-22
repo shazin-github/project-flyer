@@ -11,6 +11,13 @@
 |
 */
 
+/*
+|
+| Comment code is not error code, these are different example of 
+| using dependancy injection
+|
+*/
+
 interface Barinterface {}
 
 class Baz {}
@@ -27,22 +34,8 @@ class Bar implements Barinterface {
     // }
 }
 
-// App::bind('Bar',function(){
-
-//     //dd('fatching');
-
-//     return (new Bar(new Baz));
-// });
 
 class secondBar implements Barinterface {}
-
-// App::bind('Barinterface',function(){
-
-//     //dd('fatching');
-
-//     return new Bar;
-
-// });
 
 app()->bind('Barinterface' , 'Bar');
 
@@ -54,15 +47,18 @@ Route::get('bar' , function(){
     *
     */
     
-    //$bar = app()->make('Barinterface');
+    // 1- $bar = app()->make('Barinterface');
     
-    //$bar = app()['Barinterface'];
+    // 2- $bar = app()['Barinterface']; 
     
-    $bar = app('Barinterface');
+    // 3-
 
-    dd($bar);
+    $bar = app('Barinterface'); 
+
+    return $bar;
 
 });
+
 
 // Route::get('bar' , function(Barinterface $bar){
 
