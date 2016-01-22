@@ -11,12 +11,65 @@
 |
 */
 
+interface Barinterface {}
 
+class Baz {}
 
+class Bar implements Barinterface {
 
- 
+    // public $bar;
 
- //Route::get('flyer/{zip}/{street}' , 'flyerController@show');
+    // public function __construct()
+    // {
+
+    //     $this->bar = new Baz;
+
+    // }
+}
+
+// App::bind('Bar',function(){
+
+//     //dd('fatching');
+
+//     return (new Bar(new Baz));
+// });
+
+class secondBar implements Barinterface {}
+
+// App::bind('Barinterface',function(){
+
+//     //dd('fatching');
+
+//     return new Bar;
+
+// });
+
+app()->bind('Barinterface' , 'Bar');
+
+Route::get('bar' , function(){
+
+    /** 
+    *
+    * Three Different Way to access binding object
+    *
+    */
+    
+    //$bar = app()->make('Barinterface');
+    
+    //$bar = app()['Barinterface'];
+    
+    $bar = app('Barinterface');
+
+    dd($bar);
+
+});
+
+// Route::get('bar' , function(Barinterface $bar){
+
+//     dd($bar);
+
+// });
+
 
  
 
@@ -33,15 +86,9 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-    
-
-   
-    
-});
 
 Route::group(['middleware' => 'web'], function () {
+    
     Route::auth();
 
     Route::resource('flyer' , 'flyerController');
@@ -58,6 +105,10 @@ Route::group(['middleware' => 'web'], function () {
 
 	Route::get('flyer/create' , 'flyerController@create');
 
-	Route::get('test' , 'HomeController@index');
+	Route::get('test' , 'TestController@TestingRepository');
+
+    Route::get('Foo-test' , 'TestController@fooRepository');
+
+    Route::get('TestServiceProvider' , 'TestController@index');
    
 });
