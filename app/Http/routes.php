@@ -106,5 +106,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('Foo-test' , 'TestController@fooRepository');
 
     Route::get('TestServiceProvider' , 'TestController@index');
+
+    Route::get('testtwo' , function (){
+        dd("test");
+    });
    
 });
